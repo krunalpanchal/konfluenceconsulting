@@ -1,6 +1,0 @@
-Rescompare/
-  app.py                  # Streamlit UI (nice client)
-  api.py                  # Flask API (website integration)
-  fit_engine.py           # Shared scoring engine
-  requirements.txt
-  README.md               # optional
