@@ -1,0 +1,11 @@
+streamlit==1.42.0
+scikit-learn==1.5.1
+numpy==2.1.2
+flask==3.0.3
+flask-cors==4.0.1
+scikit-learn==1.5.1
+numpy==2.1.2
+matplotlib==3.9.2
+reportlab==4.2.2
+sentence-transformers==3.0.1
+torch>=2.2.0
