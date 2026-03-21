@@ -85,20 +85,6 @@ function countActionVerbs(text){
   return count;
 }
 
-function atsRiskFlags(text){
-  const flags = [];
-  const lower = text.toLowerCase();
-
-  if(/references available/i.test(lower)) flags.push("Remove “References available upon request” (wastes space).");
-  if(/\bobjective\b/i.test(text)) flags.push("Replace Objective with a modern Summary.");
-  if(/table of contents/i.test(text)) flags.push("Avoid Table of Contents (ATS may misread).");
-
-  const weird = (text.match(/[•●▪■◆]/g) || []).length;
-  if(weird > 80) flags.push("Too many special bullets; use simple bullets consistently.");
-
-  return flags;
-}
-
 function keywordCoverage(text, targetRole, targetIndustry){
   const tokens = new Set((text.toLowerCase().match(/[a-z][a-z+\-#]{2,}/g) || []));
   const wanted = [];
@@ -123,11 +109,9 @@ function scoreResume(text, targetRole, targetIndustry){
 
   const words = wordCount(text);
   const pages = estimatePages(words);
-
   const sections = findSections(text);
   const metrics = countMetrics(text);
   const verbs = countActionVerbs(text);
-  const flags = atsRiskFlags(text);
   const kw = keywordCoverage(text, targetRole, targetIndustry);
 
   if(!sections.summary) fixes.push("Add a 3–5 line Summary with role + domain + measurable impact.");
@@ -136,29 +120,23 @@ function scoreResume(text, targetRole, targetIndustry){
   if(!sections.skills) fixes.push("Add a Skills/Core Competencies section with 12–18 keywords.");
   else strengths.push("Skills section detected.");
 
-  if(!sections.experience) fixes.push("Ensure your Experience section is clearly labeled and easy for ATS.");
+  if(!sections.experience) fixes.push("Ensure your Experience section is clearly labeled and ATS-friendly.");
   else strengths.push("Experience section detected.");
 
   if(!sections.education) fixes.push("Add Education (even if brief).");
   else strengths.push("Education section detected.");
 
-  if(words < 350) fixes.push("Resume feels thin. Add impact bullets and key projects (aim 500–900 words).");
-  if(words > 1100) fixes.push("Resume may be too long. Tighten to strongest bullets (aim 1–2 pages).");
-  if(pages > 2) fixes.push("Try to keep to 1–2 pages unless you’re applying to senior/academic CV contexts.");
-
+  if(words < 350) fixes.push("Resume feels thin. Add impact bullets and key projects.");
+  if(words > 1100) fixes.push("Resume may be too long. Tighten to strongest bullets.");
   if(metrics < 6) fixes.push("Add more quantified outcomes (%, $, time saved, scale, risk reduced).");
-  else strengths.push("Good use of measurable outcomes.");
-
-  if(verbs < 12) fixes.push("Start bullets with strong action verbs (Led, Delivered, Implemented, Reduced…).");
+  else strengths.push("Good measurable outcomes.");
+  if(verbs < 12) fixes.push("Use stronger action verbs at the start of bullets.");
   else strengths.push("Good action verb density.");
-
-  for(const f of flags) fixes.push(f);
-
-  if(kw.score < 45) fixes.push("Increase keyword alignment for your target role/industry (skills + tools + domain terms).");
-  else strengths.push("Decent keyword coverage for target role/industry.");
+  if(kw.score < 45) fixes.push("Increase keyword alignment for your target role and industry.");
+  else strengths.push("Decent keyword coverage.");
 
   let score = 100;
-  score -= (fixes.length * 4);
+  score -= fixes.length * 4;
   score -= metrics < 6 ? 10 : 0;
   score -= verbs < 12 ? 8 : 0;
   score -= kw.score < 45 ? 10 : 0;
@@ -170,12 +148,11 @@ function scoreResume(text, targetRole, targetIndustry){
   const atsChecklist = [
     { ok: sections.summary, text: "Summary/Profile section present" },
     { ok: sections.skills, text: "Skills/Core Competencies present" },
-    { ok: sections.experience, text: "Experience section clearly labeled" },
-    { ok: sections.education, text: "Education present" },
-    { ok: flags.length === 0, text: "No obvious ATS risk phrases found" },
+    { ok: sections.experience, text: "Experience clearly labeled" },
+    { ok: sections.education, text: "Education present" }
   ];
 
-  return { score, ats, length, fixes, strengths, atsChecklist, kw };
+  return { score, ats, length, fixes, strengths, atsChecklist };
 }
 
 function renderResults(result, rawText){
@@ -229,13 +206,12 @@ async function main(){
     try{
       const text = normalize(await extractTextFromFile(file));
       if(!text || text.length < 80){
-        throw new Error("Could not extract enough text. Try a different file (or a text-based PDF).");
+        throw new Error("Could not extract enough text.");
       }
 
       $("statusText").textContent = "Analyzing…";
       const result = scoreResume(text, role, industry);
-
-      $("statusText").textContent = `Done. Keyword coverage score: ${result.kw.score}/100`;
+      $("statusText").textContent = "Done.";
       renderResults(result, text);
     } catch(err){
       $("statusText").textContent = `Error: ${err.message || err}`;
