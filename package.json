@@ -1,0 +1,9 @@
+{
+  "name": "konfluence-consulting-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site for Konfluence Consulting",
+  "scripts": {
+    "serve": "python -m http.server 8080"
+  }
+}
