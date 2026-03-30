@@ -1,0 +1,16 @@
+[
+  {
+    "external_id": "br-001",
+    "title": "Vice President, Client Reporting Onboarding",
+    "company": "BlackRock",
+    "location": "Seattle, WA",
+    "url": "https://example.com/jobs/br-001",
+    "description": "Lead client reporting onboarding, data quality, stakeholder management, Aladdin coordination, and process improvement using SQL and reporting platforms.",
+    "employment_type": "Full-time",
+    "seniority": "VP",
+    "industry": "Asset Management",
+    "salary_min": 180000,
+    "salary_max": 240000,
+    "source": "seed"
+  }
+]

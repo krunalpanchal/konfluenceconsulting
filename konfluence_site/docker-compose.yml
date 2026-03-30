@@ -1,0 +1,12 @@
+services:
+  konfluence-api:
+    build: .
+    container_name: konfluence-full-real-engines-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./hf_cache:/root/.cache/huggingface

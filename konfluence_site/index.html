@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konfluence Consulting | Live Intelligence Platform</title>
+  <meta name="description" content="Konfluence Consulting is a consulting platform powered by Python intelligence engines for live resume analysis and job discovery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>KONFLUENCE</strong>
+          <small>CONSULTING</small>
+        </span>
+      </a>
+      <nav class="menu">
+        <a href="#solutions">Solutions</a>
+        <a href="#platform">Platform</a>
+        <a href="#resume-engine">Resume Engine</a>
+        <a href="#job-engine">Job Engine</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="button button-small" href="#resume-engine">Try Live Engines</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Executive-grade consulting • Live AI delivery</p>
+          <h1>Consulting Platform Powered by Python Intelligence Engines</h1>
+          <p class="hero-text">
+            Konfluence Consulting combines consulting expertise with backend intelligence systems that analyze,
+            validate, and match talent with precision — now live through your deployed production API.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#resume-engine">Analyze Resume</a>
+            <a class="button button-secondary" href="#job-engine">Find Jobs</a>
+          </div>
+          <div class="trust-row">
+            <span>White-glove delivery</span>
+            <span>AI-powered validation</span>
+            <span>Partner intelligence</span>
+            <span>Live production API</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="glass-card hero-panel panel-main">
+            <div class="metric-kicker">Live production integration</div>
+            <h3 id="api-health-text">Checking API status...</h3>
+            <p id="api-health-detail">Testing api.konfluenceconsulting.com</p>
+            <div class="mini-metrics">
+              <div><strong>Resume</strong><span>Live scoring</span></div>
+              <div><strong>Jobs</strong><span>Live search</span></div>
+              <div><strong>PDF</strong><span>Auto reports</span></div>
+            </div>
+          </div>
+
+          <div class="glass-card founder-card">
+            <img src="assets/founder-headshot.png" alt="Krunal Panchal">
+            <div>
+              <h4>Krunal Panchal</h4>
+              <p>Founder, Konfluence Consulting</p>
+            </div>
+          </div>
+
+          <div class="glass-card stat-card stat-card-a">
+            <span>API Base</span>
+            <strong id="api-base-mini">Live</strong>
+          </div>
+
+          <div class="glass-card stat-card stat-card-b">
+            <span>Environment</span>
+            <strong>Production</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div>AI-powered candidate validation</div>
+        <div>Consulting-led workforce solutions</div>
+        <div>Python-based scoring systems</div>
+        <div>Live public API deployment</div>
+      </div>
+    </section>
+
+    <section id="solutions" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Solutions</p>
+          <h2>Consulting-led execution powered by intelligence</h2>
+          <p>We deliver validated capability, not just candidate volume.</p>
+        </div>
+
+        <div class="solution-grid">
+          <article class="solution-card reveal">
+            <h3>Executive Talent Delivery</h3>
+            <p>High-confidence hiring support for firms that need experienced operators, analysts, and transformation leaders.</p>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Outsourcing Strategy</h3>
+            <p>Onshore and offshore partner selection guided by quality, expertise, and reputation signals.</p>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Technology & Delivery Teams</h3>
+            <p>Project managers, business analysts, QA, DevOps, and delivery support aligned to business outcomes.</p>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Cyber & Resilience</h3>
+            <p>Business continuity, change management, and security-aligned operating support for modern teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="section section-dark">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Platform</p>
+          <h2>Intelligence engines behind the platform</h2>
+          <p>These engines are embedded into consulting workflows and now connected to the live API.</p>
+        </div>
+
+        <div class="engine-block reveal">
+          <div class="engine-copy">
+            <h3>Resume Intelligence Engine</h3>
+            <p>Parses resumes and compares them against role requirements using semantic analysis, skills mapping, must-have validation, and weighted fit scoring.</p>
+            <ul>
+              <li>Resume parsing and normalization</li>
+              <li>Job description comparison</li>
+              <li>Gap identification and recommendation</li>
+              <li>Weighted fit score output with PDF</li>
+            </ul>
+          </div>
+          <div class="engine-asset">
+            <img src="assets/resume-intelligence-engine.svg" alt="Resume Intelligence Engine diagram" loading="lazy">
+          </div>
+        </div>
+
+        <div class="engine-block engine-block-reverse reveal">
+          <div class="engine-copy">
+            <h3>Opportunity Discovery Engine</h3>
+            <p>Identifies and ranks relevant opportunities based on experience alignment, industry fit, preferences, and live search signals.</p>
+            <ul>
+              <li>Live job discovery</li>
+              <li>Role matching and ranking logic</li>
+              <li>Priority scoring and shortlist generation</li>
+              <li>Saved results into SQLite</li>
+            </ul>
+          </div>
+          <div class="engine-asset">
+            <img src="assets/opportunity-discovery-engine.svg" alt="Opportunity Discovery Engine diagram" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="api-status" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">API Status</p>
+          <h2>Production connectivity</h2>
+          <p>Confirm that your website is reaching the live backend.</p>
+        </div>
+        <div class="status-card reveal">
+          <div>
+            <strong>Base URL</strong>
+            <div class="muted mono" id="api-base-url"></div>
+          </div>
+          <div>
+            <strong>Health</strong>
+            <div class="muted" id="health-result">Waiting...</div>
+          </div>
+          <button class="button button-small" id="check-health-btn" type="button">Check API</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume-engine" class="section section-dark">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Resume Intelligence Engine</p>
+          <h2>Paste text or upload a resume</h2>
+          <p>Returns fit score, band, must-haves, breakdown, radar, and PDF report.</p>
+        </div>
+
+        <div class="tabs reveal">
+          <button class="tab active" data-tab="paste-tab" type="button">Paste Resume</button>
+          <button class="tab" data-tab="upload-tab" type="button">Upload Resume</button>
+        </div>
+
+        <div class="tab-panel active" id="paste-tab">
+          <form id="resume-form" class="form-card reveal">
+            <div class="grid-2">
+              <div>
+                <label for="candidate_name">Candidate Name</label>
+                <input id="candidate_name" type="text" placeholder="Krunal Panchal">
+              </div>
+              <div>
+                <label for="use_auto_must_haves">Must-Have Detection</label>
+                <select id="use_auto_must_haves">
+                  <option value="true" selected>Auto-detect from JD</option>
+                  <option value="false">Use engine defaults</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="resume_text">Resume Text</label>
+            <textarea id="resume_text" rows="12" placeholder="Paste resume text here"></textarea>
+
+            <label for="job_description">Job Description</label>
+            <textarea id="job_description" rows="12" placeholder="Paste job description here"></textarea>
+
+            <div class="action-row">
+              <button class="button" type="submit">Analyze Fit</button>
+              <span class="muted" id="resume-form-status"></span>
+            </div>
+          </form>
+        </div>
+
+        <div class="tab-panel" id="upload-tab">
+          <form id="resume-upload-form" class="form-card reveal">
+            <div class="grid-2">
+              <div>
+                <label for="upload_candidate_name">Candidate Name</label>
+                <input id="upload_candidate_name" type="text" placeholder="Krunal Panchal">
+              </div>
+              <div>
+                <label for="upload_use_auto_must_haves">Must-Have Detection</label>
+                <select id="upload_use_auto_must_haves">
+                  <option value="true" selected>Auto-detect from JD</option>
+                  <option value="false">Use engine defaults</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="resume_file">Resume File</label>
+            <input id="resume_file" type="file" accept=".txt,.md,.pdf,.doc,.docx">
+
+            <label for="upload_job_description">Job Description</label>
+            <textarea id="upload_job_description" rows="12" placeholder="Paste job description here"></textarea>
+
+            <div class="action-row">
+              <button class="button" type="submit">Upload and Analyze</button>
+              <span class="muted" id="resume-upload-status"></span>
+            </div>
+          </form>
+        </div>
+
+        <div id="resume-results" class="results-card hidden reveal">
+          <div class="results-header">
+            <h3>Resume Fit Results</h3>
+            <a id="pdf-link" class="button button-secondary" target="_blank" rel="noopener">Open PDF Report</a>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-box"><span>Score</span><strong id="result-score">-</strong></div>
+            <div class="metric-box"><span>Band</span><strong id="result-band">-</strong></div>
+            <div class="metric-box"><span>Semantic</span><strong id="result-semantic">-</strong></div>
+            <div class="metric-box"><span>TF-IDF</span><strong id="result-tfidf">-</strong></div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Must-Haves Present</h4>
+              <div id="must-have-present" class="chip-list"></div>
+            </div>
+            <div class="panel">
+              <h4>Must-Haves Missing</h4>
+              <div id="must-have-missing" class="chip-list"></div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Component Breakdown</h4>
+              <ul id="component-breakdown" class="list"></ul>
+            </div>
+            <div class="panel">
+              <h4>Top Missing Keywords</h4>
+              <div id="top-missing-keywords" class="chip-list"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h4>Radar</h4>
+            <img id="radar-image" alt="Radar chart">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="job-engine" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Opportunity Discovery Engine</p>
+          <h2>Run live job search</h2>
+          <p>Search the live job engine with resume text, multiple queries, and multiple locations.</p>
+        </div>
+
+        <form id="job-search-form" class="form-card reveal">
+          <label for="job_resume_text">Resume / Profile Text</label>
+          <textarea id="job_resume_text" rows="10" placeholder="Paste resume or profile text here"></textarea>
+
+          <div class="grid-2">
+            <div>
+              <label for="queries">Queries</label>
+              <textarea id="queries" rows="6" placeholder="One query per line&#10;client reporting onboarding&#10;data operations leadership"></textarea>
+            </div>
+            <div>
+              <label for="locations">Locations</label>
+              <textarea id="locations" rows="6" placeholder="One location per line&#10;Seattle, WA&#10;Remote"></textarea>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div>
+              <label for="per_query_results">Results Per Query</label>
+              <input id="per_query_results" type="number" value="10" min="1" max="50">
+            </div>
+            <div>
+              <label for="min_score">Min Score</label>
+              <input id="min_score" type="number" step="0.01" value="0.14">
+            </div>
+            <div>
+              <label for="days_back">Days Back</label>
+              <input id="days_back" type="number" value="14" min="1" max="90">
+            </div>
+            <div>
+              <label for="use_embeddings">Scoring Mode</label>
+              <select id="use_embeddings">
+                <option value="false" selected>TF-IDF</option>
+                <option value="true">Embeddings</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <label class="toggle">
+              <input id="include_indeed_engine" type="checkbox" checked>
+              <span>Include Indeed engine</span>
+            </label>
+            <label class="toggle">
+              <input id="save_results" type="checkbox" checked>
+              <span>Save returned jobs into SQLite</span>
+            </label>
+          </div>
+
+          <div class="action-row">
+            <button class="button" type="submit">Find Jobs</button>
+            <span class="muted" id="job-search-status"></span>
+          </div>
+        </form>
+
+        <div id="job-results" class="results-card hidden reveal">
+          <div class="results-header">
+            <h3>Live Job Results</h3>
+            <span id="job-results-count" class="muted"></span>
+          </div>
+          <div id="job-results-list" class="job-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-dark">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="assets/founder-headshot.png" alt="Krunal Panchal portrait">
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About</p>
+          <h2>Built by an operator, not just an advisor</h2>
+          <p>
+            Krunal Panchal brings deep experience across asset management, onboarding, reporting, data integrity,
+            and enterprise transformation. Konfluence Consulting reflects a practical philosophy: combine execution
+            expertise with intelligence systems to drive better outcomes.
+          </p>
+          <p class="founder-tagline">Operator-led consulting. Intelligence-driven execution.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
