@@ -1,16 +1,13 @@
-// wrangler.jsonc
-"name": "konfluenceadmin",
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "konfluenceconsulting",
-  "compatibility_date": "2025-09-27",
-  "observability": {
-    "enabled": true
+  "name": "konfluenceadmin",
+  "main": "src/index.js",
+  "compatibility_date": "2026-03-30",
+  "build": {
+    "command": "npm run build",
+    "cwd": "./"
   },
-  "assets": {
-    "directory": "konfluence_site"
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  "build.upload": {
+    "format": "modules",
+    "main": "./dist/worker/index.js"
+  }
 }
