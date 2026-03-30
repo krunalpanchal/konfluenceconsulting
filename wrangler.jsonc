@@ -1,3 +1,5 @@
+// wrangler.jsonc
+"name": "konfluenceadmin",
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "konfluenceconsulting",
